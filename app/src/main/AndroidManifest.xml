@@ -3,6 +3,7 @@
     package="dev.cardoso.quotesmvvm">
     <uses-permission android:name="android.permission.INTERNET"/>
     <application
+        android:name=".InitApp"
         android:usesCleartextTraffic="true"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -15,7 +16,6 @@
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
