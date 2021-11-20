@@ -14,11 +14,7 @@
         android:theme="@style/Theme.QuotesMVVM"
         android:usesCleartextTraffic="true">
         <activity
-            android:name=".ui.login.LoginActivityAS"
-            android:exported="true"
-            android:label="@string/title_activity_login_as" />
-        <activity
-            android:name=".presentation.view.MainActivity"
+            android:name=".presentation.view.LoginActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

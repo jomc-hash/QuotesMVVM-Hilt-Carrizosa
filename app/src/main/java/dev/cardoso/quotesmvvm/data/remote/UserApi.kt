@@ -11,5 +11,7 @@ import retrofit2.http.POST
 interface UserApi {
     @Headers("Content-Type: application/json; charset=utf-8", "Accept: */*; charset=utf-8")
     @POST("$LOGIN_URL")
-    suspend fun loginUser(@Body requestLogin: LoginRequest): Response<LoginResponse>
+    suspend fun loginUser(@Body loginRequest: LoginRequest): Response<LoginResponse>
+
+
 }

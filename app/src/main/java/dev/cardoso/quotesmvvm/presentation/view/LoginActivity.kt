@@ -23,15 +23,16 @@ class LoginActivity (): AppCompatActivity(){
 
 
     override fun onCreate(savedInstanceState: Bundle?){
-       super.onCreate(savedInstanceState)
+        print(this.applicationContext)
+        super.onCreate(savedInstanceState)
         binding = ActivityLoginBinding.inflate(layoutInflater)
+        setContentView(binding.root)
         binding.btnLogin.setOnClickListener{
             val account = binding.etAccount.text.toString()
             val password =binding.etPassword.text.toString()
             userViewModel.loginRequest(LoginRequest(account, password))
         }
-        setContentView(binding.root)
-        userPreferencesRepository = UserPreferencesRepository(this@LoginActivity)
+    userPreferencesRepository = UserPreferencesRepository(this@LoginActivity)
         observer()
     }
 
@@ -40,7 +41,7 @@ class LoginActivity (): AppCompatActivity(){
             userViewModel.loginResponse.collect{
                 if(it.success){
                     val token = it.data
-                    Toast.makeText(baseContext, "El usuario se ha autenticado corrctamente", Toast.LENGTH_LONG)
+                    Toast.makeText(baseContext, "El usuario se ha autenticado corrctamente", Toast.LENGTH_LONG).show()
                     saveToken(token)
                 }else{
                     if (it.message!=""){
