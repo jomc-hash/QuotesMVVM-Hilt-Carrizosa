@@ -1,6 +1,7 @@
 package dev.cardoso.quotesmvvm.core
 
 import dev.cardoso.quotesmvvm.data.local.entities.QuoteEntity
+import dev.cardoso.quotesmvvm.data.model.LoginResponse
 import dev.cardoso.quotesmvvm.data.model.QuoteModel
 import kotlinx.coroutines.flow.*
 
@@ -21,4 +22,8 @@ fun  List<QuoteModel>.toQuoteEntity(): List<QuoteEntity> {
             quote = it.quote,
             author = it.author)
     }
+}
+
+fun LoginResponse.isSuccessful(): Boolean {
+    return this.success
 }
